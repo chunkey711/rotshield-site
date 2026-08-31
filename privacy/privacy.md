@@ -1,6 +1,6 @@
 # Privacy Policy — Rotshield
 
-**Effective [EFFECTIVE DATE]**
+**Effective 1 September 2026**
 
 ## The short version
 
@@ -10,9 +10,8 @@ That is not a statement of intent. It is a description of the build: there is no
 
 ## Who is responsible
 
-Rotshield is made by **[LEGAL NAME]**, a sole proprietor registered in Poland (NIP [TAX ID]).
-Registered address: [REGISTERED ADDRESS].
-Email: [CONTACT EMAIL].
+Rotshield is made by **Ruslan Dzhafarov**, a sole proprietor registered in Poland (NIP PL1182269405).
+Email: ruslan.d@scalemate.co.
 
 Under the GDPR that makes me the data controller. Under the EU Digital Services Act I am a trader, which is why the details above are published rather than kept private.
 
@@ -74,7 +73,7 @@ Here those rights are unusually easy to exercise, because I hold nothing:
 - **Correction and deletion** — edit or delete it in the app; delete the app to erase everything at once.
 - **Objection and restriction** — there is no processing to object to or restrict.
 
-If you think that is wrong, write to [CONTACT EMAIL] and I will answer. You can also complain to the Polish data protection authority (Prezes Urzędu Ochrony Danych Osobowych, uodo.gov.pl) or to the authority where you live.
+If you think that is wrong, write to ruslan.d@scalemate.co and I will answer. You can also complain to the Polish data protection authority (Prezes Urzędu Ochrony Danych Osobowych, uodo.gov.pl) or to the authority where you live.
 
 ## Children
 
@@ -86,4 +85,4 @@ If this policy changes, the updated version appears on this page with a new date
 
 ## Contact
 
-[CONTACT EMAIL] — [LEGAL NAME], [REGISTERED ADDRESS], Poland.
+ruslan.d@scalemate.co — Ruslan Dzhafarov, Poland.
