@@ -77,7 +77,7 @@ If you think that is wrong, write to ruslan.d@scalemate.co and I will answer.
 
 ## Children
 
-Rotshield is for adults who want to limit themselves. It is not a parental control, and it is not directed at children. I do not knowingly hold data about anyone, children included.
+Rotshield is a self-control tool: you limit your own device. It is not a parental control, and it is not directed at children. I hold no data about anyone, children included.
 
 ## Changes to this policy
 
