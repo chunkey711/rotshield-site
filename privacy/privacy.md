@@ -10,7 +10,7 @@ That is not a statement of intent. It is a description of the build: there is no
 
 ## Who is responsible
 
-Rotshield is made by **Ruslan Dzhafarov**, a sole proprietor registered in Poland (NIP PL1182269405).
+Rotshield is made by **Ruslan Dzhafarov**, a sole proprietor registered in Poland.
 Email: ruslan.d@scalemate.co.
 
 Under the GDPR that makes me the data controller. Under the EU Digital Services Act I am a trader, which is why the details above are published rather than kept private.
