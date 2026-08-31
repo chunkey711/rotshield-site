@@ -73,7 +73,7 @@ Here those rights are unusually easy to exercise, because I hold nothing:
 - **Correction and deletion** — edit or delete it in the app; delete the app to erase everything at once.
 - **Objection and restriction** — there is no processing to object to or restrict.
 
-If you think that is wrong, write to ruslan.d@scalemate.co and I will answer. You can also complain to the Polish data protection authority (Prezes Urzędu Ochrony Danych Osobowych, uodo.gov.pl) or to the authority where you live.
+If you think that is wrong, write to ruslan.d@scalemate.co and I will answer.
 
 ## Children
 
