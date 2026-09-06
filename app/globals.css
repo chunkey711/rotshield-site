@@ -1,0 +1,265 @@
+/* Палитра из приложения (theme/primitives.js): крем/бумага, тушь, единственный
+   акцент — амбер. Роли те же, что в theme/tokens.js. */
+:root {
+  --canvas: #faf7ef;
+  --surface: #ffffff;
+  --sunken: #efede8;
+  --text: #0b0b0c;
+  --muted: #3a362f;
+  --faint: #5f594f;
+  --hairline: rgba(11, 11, 12, 0.2);
+  --divider: rgba(11, 11, 12, 0.1);
+  --chip: rgba(11, 11, 12, 0.08);
+  --accent: #8f5a20;
+  --accent-fill: #c87a1e;
+  --accent-soft: rgba(200, 122, 30, 0.14);
+  --action-bg: #0b0b0c;
+  --action-text: #faf7ef;
+  --mascot: #0b0b0c;
+  --moss: #5e7252;
+  --clay: #b8523a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #0a0b0c;
+    --surface: #1b1f23;
+    --sunken: #23272b;
+    --text: #fffdf7;
+    --muted: #c3cad1;
+    --faint: #8f979f;
+    --hairline: rgba(255, 253, 247, 0.2);
+    --divider: rgba(255, 253, 247, 0.12);
+    --chip: rgba(255, 253, 247, 0.14);
+    --accent: #ffb03a;
+    --accent-fill: #ffb03a;
+    --accent-soft: rgba(255, 176, 58, 0.16);
+    --action-bg: #fffdf7;
+    --action-text: #0a0b0c;
+    --mascot: #fffdf7;
+    --moss: #9caf88;
+    --clay: #c87f5a;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  background: var(--canvas);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--text);
+  font-family: var(--font-body), 'Mulish', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), 'Spectral', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+/* Служебная роль из приложения: строчные, чуть разрежённые — данные, а не
+   терминал. */
+.caption {
+  font-size: 0.8rem;
+  letter-spacing: 0.012em;
+  color: var(--faint);
+}
+
+.overline {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  height: 54px;
+  padding: 0 1.6rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.pill:active {
+  transform: scale(0.98);
+  opacity: 0.85;
+}
+
+.pill--primary {
+  background: var(--action-bg);
+  color: var(--action-text);
+}
+
+.pill--secondary {
+  color: var(--text);
+  border: 1px solid var(--hairline);
+}
+
+.pill--muted {
+  color: var(--muted);
+  background: var(--chip);
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Текстовые страницы: privacy, support ---------- */
+
+.prose-page {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.prose-header {
+  margin-bottom: 3rem;
+}
+
+.prose-home {
+  color: var(--faint);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.012em;
+}
+
+.prose-home:hover {
+  color: var(--text);
+}
+
+.prose h1 {
+  font-size: 2.4rem;
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+}
+
+.prose h2 {
+  font-size: 1.45rem;
+  line-height: 1.25;
+  margin: 2.75rem 0 0.75rem;
+}
+
+.prose p {
+  margin: 0 0 1.05rem;
+}
+
+.prose .effective {
+  color: var(--faint);
+  font-size: 0.9rem;
+  letter-spacing: 0.012em;
+  margin: 0 0 2rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--divider);
+}
+
+.prose .lede {
+  font-size: 1.1rem;
+}
+
+.prose ul {
+  margin: 0 0 1.05rem;
+  padding-left: 1.15rem;
+}
+
+.prose li {
+  margin-bottom: 0.6rem;
+}
+
+.prose li::marker {
+  color: var(--faint);
+}
+
+.prose strong {
+  font-weight: 700;
+}
+
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85em;
+  background: var(--sunken);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+
+.prose .contact {
+  margin-top: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: 20px;
+  color: var(--muted);
+}
+
+/* ---------- Футер ---------- */
+
+.site-footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--divider);
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.site-footer nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.site-footer nav a:hover {
+  color: var(--text);
+}
+
+.site-footer .caption {
+  margin: 0;
+}

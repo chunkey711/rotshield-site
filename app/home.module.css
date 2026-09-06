@@ -1,0 +1,313 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4.5rem 1.25rem 5rem;
+  text-align: center;
+}
+
+.heroInner {
+  position: relative;
+  max-width: 40rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.heroMascot {
+  margin: 0.5rem 0;
+}
+
+.title {
+  font-size: clamp(2.6rem, 8vw, 4.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.lede {
+  max-width: 32rem;
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* Один оркестрованный вход: элементы поднимаются один за другим. */
+.reveal {
+  opacity: 0;
+  animation: rise 900ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.reveal:nth-child(1) { animation-delay: 0ms; }
+.reveal:nth-child(2) { animation-delay: 120ms; }
+.reveal:nth-child(3) { animation-delay: 300ms; }
+.reveal:nth-child(4) { animation-delay: 480ms; }
+.reveal:nth-child(5) { animation-delay: 640ms; }
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.25rem;
+}
+
+.section + .section {
+  border-top: 1px solid var(--divider);
+}
+
+.sectionTitle {
+  font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+  line-height: 1.15;
+  margin: 0.5rem 0 1rem;
+  text-wrap: balance;
+}
+
+.sectionLede {
+  margin: 0;
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  text-wrap: pretty;
+}
+
+.textLink {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-weight: 500;
+}
+
+/* ---------- Как работает ---------- */
+
+.how {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 760px) {
+  .how {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.step {
+  position: relative;
+  padding-left: 3.5rem;
+}
+
+.step h2 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.step p {
+  margin: 0;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+.stepNumber {
+  position: absolute;
+  left: 0;
+  top: -0.35rem;
+  font-family: var(--font-display), 'Spectral', Georgia, serif;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--accent);
+  font-style: italic;
+}
+
+/* Мок системного щита из приложения: тушь, крем, «Stay focused» / «Unlock». */
+.shield {
+  justify-self: center;
+  width: min(100%, 300px);
+  padding: 2.5rem 1.5rem 1.5rem;
+  border-radius: 28px;
+  background: #0a0b0c;
+  color: #fffdf7;
+  border: 1px solid rgba(255, 253, 247, 0.16);
+  box-shadow:
+    0 30px 80px -30px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 253, 247, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.shieldMascot {
+  --mascot: #fffdf7;
+  margin-bottom: 1.25rem;
+}
+
+.shieldTitle {
+  font-family: var(--font-display), 'Spectral', Georgia, serif;
+  font-size: 1.7rem;
+  line-height: 1.1;
+  margin: 0 0 0.35rem;
+}
+
+.shieldSubtitle {
+  margin: 0 0 2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.012em;
+  color: #c3cad1;
+}
+
+.shieldButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #c3cad1;
+}
+
+.shieldPrimary {
+  background: #fffdf7;
+  color: #0a0b0c;
+  margin-bottom: 0.25rem;
+}
+
+/* ---------- Ценности ---------- */
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+/* ---------- Brain score ---------- */
+
+.states {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.states li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.stateName {
+  font-family: var(--font-display), 'Spectral', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+@media (max-width: 520px) {
+  .states {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1.75rem;
+  }
+  .states li span[role='img'] {
+    width: 60px !important;
+    height: 60px !important;
+  }
+}
+
+/* ---------- Privacy ---------- */
+
+.privacy {
+  padding-top: 0;
+  border-top: none !important;
+}
+
+.privacyInner {
+  padding: 3.5rem 1.75rem;
+  border-radius: 28px;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+}
+
+.honest {
+  max-width: 40rem;
+}
+
+/* ---------- CTA ---------- */
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.25rem;
+}
+
+.cta .sectionTitle {
+  margin-bottom: 0;
+}
+
+.footerWrap {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}

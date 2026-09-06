@@ -1,0 +1,21 @@
+.mascot {
+  display: inline-block;
+  flex: none;
+  background: var(--mascot);
+  -webkit-mask: var(--src) center / contain no-repeat;
+  mask: var(--src) center / contain no-repeat;
+}
+
+/* Та же амплитуда, что у BreathingLogo в приложении: 1 → 1.04, 3 секунды туда и обратно. */
+.breathing {
+  animation: breathe 3s ease-in-out infinite alternate;
+}
+
+@keyframes breathe {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}

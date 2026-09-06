@@ -1,0 +1,54 @@
+export const metadata = {
+  title: 'Support',
+  description: 'Help and contact for Rotshield, the screen time control app for iPhone.',
+};
+
+# Support
+
+<p className="effective">Rotshield for iPhone · requires iOS 18 or later</p>
+
+<p className="lede">Most problems are an iOS permission that has drifted out of sync. Open **Settings → Help & support** inside the app and tap **Reapply blocking** — it reinstalls every enabled rule from scratch, restores the shield style and rebuilds the block list. That fixes the majority of cases.</p>
+
+## Getting started
+
+On first launch Rotshield asks for Screen Time access. iOS shows its own dialog — *"Allow Rotshield to access Screen Time?"* Tap **Allow**. Nothing can be blocked without it: the shield belongs to iOS, and this permission is what lets the app ask for it.
+
+Notifications are optional. Decline them and blocking works exactly the same — you just will not be told when a window or a session ends.
+
+## I declined Screen Time access. How do I turn it back on?
+
+iOS only offers that dialog once. Open **Settings → Screen Time** on your iPhone; apps that have been granted access are listed there, and Rotshield can be switched back on. After that, reopen the app.
+
+## An app is still blocked, and I think it should not be
+
+Some rule's schedule covers this minute — that is the whole mechanism. If you are sure the schedule has ended, tap **Reapply blocking** in Help & support. It rebuilds the block list from your rules, which also clears any shield left behind by a rule you have since changed.
+
+## How does the 15-minute window work?
+
+Completing a challenge opens every rule that is active right now, for 15 minutes. When the time is up, iOS puts the shield back on its own and sends one notification. Closing the window early puts it back immediately.
+
+A focus timer is different: the window does not open it. A running session ends only from inside the app, and in hard mode it does not end early at all.
+
+## Can I rely on the block?
+
+Treat it as friction, not a lock. The shield belongs to iOS — Rotshield asks the system to close an app, and the system does it — so anything that undoes that arrangement undoes the block: withdrawing Screen Time access, or deleting Rotshield. Schedules can also drift out of sync with reality, which is what **Reapply blocking** is for.
+
+If a failed block would cause you real harm, do not rely on this app alone.
+
+## My screen time numbers look wrong
+
+iOS aggregates usage on its own rhythm, and the figures can lag by a few minutes. The score line shows when they were last computed. The numbers come from Apple, not from us — Rotshield cannot adjust them.
+
+## What leaves my phone?
+
+Nothing. There is no server, no account and no analytics in the app. Screen time is computed by iOS inside a sandboxed extension and never sent anywhere. The details are in the [Privacy Policy](/privacy/).
+
+## How do I delete my data?
+
+Rules, settings and history live in the app's private container on your iPhone. Delete Rotshield and iOS destroys the container — everything goes with it. Individual rules and sessions can be edited or deleted inside the app at any time.
+
+## Still stuck?
+
+Write to me. Tell me your iPhone model, your iOS version, and what you expected to happen — that is usually enough to work out what went wrong.
+
+<div className="contact">ruslan.d@scalemate.co</div>
