@@ -47,6 +47,24 @@
   margin-top: 0.5rem;
 }
 
+/* Бейдж App Store: высота как у .pill, чтобы стоять вровень с «How it works». */
+.badge {
+  display: inline-flex;
+  height: 54px;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.badge img {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+.badge:active {
+  transform: scale(0.98);
+  opacity: 0.85;
+}
+
 /* Один оркестрованный вход: элементы поднимаются один за другим. */
 .reveal {
   opacity: 0;

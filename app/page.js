@@ -42,9 +42,16 @@ function GetAppButton() {
   if (!APP_STORE_URL) {
     return <span className="pill pill--muted">Coming to the App Store</span>;
   }
+  // Официальный бейдж Apple, артворк не правим (public/badges — оригиналы с
+  // toolbox.marketingtools.apple.com). Чёрный на светлой теме, белый на тёмной,
+  // как и основная пилюля.
   return (
-    <a className="pill pill--primary" href={APP_STORE_URL}>
-      Get it on the App Store
+    <a className={styles.badge} href={APP_STORE_URL}>
+      <picture>
+        <source srcSet="/badges/app-store-white.svg" media="(prefers-color-scheme: dark)" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/badges/app-store-black.svg" alt="Download on the App Store" width={162} height={54} />
+      </picture>
     </a>
   );
 }
