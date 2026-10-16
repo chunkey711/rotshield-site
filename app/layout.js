@@ -20,7 +20,7 @@ const mulish = Mulish({
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: 'Rotshield', template: '%s — Rotshield' },
-  description: 'Screen time control for iPhone. No account, no server, no analytics.',
+  description: 'Screen time control for iPhone. No account, and your Screen Time data never leaves your phone.',
   openGraph: { siteName: 'Rotshield', type: 'website' },
 };
 
