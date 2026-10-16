@@ -1,17 +1,24 @@
 export const metadata = {
   title: 'Privacy Policy',
-  description: 'Rotshield has no server, no account and no analytics. Nothing leaves your iPhone.',
+  description: 'Your Screen Time data never leaves your iPhone. What Rotshield does send — usage analytics and subscription status — and how to turn it off.',
 };
+
+{/* TODO(Руслан): дата — день выхода 1.1.0 в App Store. */}
 
 # Privacy Policy
 
-<p className="effective">Effective 1 September 2026</p>
+<p className="effective">Effective [release date of version 1.1]</p>
 
 ## The short version
 
-Rotshield has no server, no account, and no analytics. Nothing you do in the app is sent anywhere. Everything it knows lives in a container on your iPhone, and deleting the app deletes all of it.
+Your Screen Time data never leaves your iPhone: not which apps you block, not how long you use them, not the per-app numbers on the Today screen. Rotshield has no account and no server of its own.
 
-That is not a statement of intent. It is a description of the build: there is no code in Rotshield that sends your data anywhere.
+Two things do leave the phone, starting with version 1.1:
+
+- **Usage analytics** — which screens you open and which steps you take in the app, plus masked screen recordings of the app itself, sent to PostHog in the EU. They tell me where people get stuck. You can turn them off in Settings → Share usage analytics.
+- **Subscription status** — whether you have an active subscription, handled by RevenueCat so the app can unlock and keep working after a renewal. Apple takes the payment; I never see your card or your Apple ID.
+
+Neither is linked to your name, email or Apple ID, and neither is used for advertising or to track you across other apps.
 
 ## Who is responsible
 
@@ -22,7 +29,39 @@ Under the GDPR that makes me the data controller. Under the EU Digital Services 
 
 ## What Rotshield collects
 
-Nothing. I receive no data from the app: no usage statistics, no crash reports, no identifiers, no email address, no purchase history. There is no login, so there is no account for me to look at.
+### Usage analytics
+
+When analytics are on, the app sends events like these to PostHog:
+
+- which screen you opened, and which onboarding step you reached;
+- your answers to the onboarding questions — the options you tapped, including your age range and roughly how many hours a day you think you spend on your phone. Never free text;
+- whether you granted Screen Time and notification permissions — yes or no;
+- that you created, paused, resumed or deleted a rule, its type, how many apps and categories it covers (a count, not which ones), and the limit length in minutes;
+- that you saw the subscription screen, picked a plan, started, finished, cancelled or failed a purchase, or tapped Restore;
+- the steps of the "unlock" challenge, and whether it ended with an access window or you gave up.
+
+Each event carries a random identifier generated on your phone, your device model, iOS version, app version and language. PostHog sees your IP address when the event arrives.
+{/* TODO(Руслан): включить в PostHog «Discard client IP data» — тогда эту фразу заменить на «…and discards it» */}
+
+**Screen recordings.** When analytics are on, the app also records what its own screens look like, so I can see where people get confused. Every piece of text and every image is masked before the recording leaves the phone, and the screens that show Screen Time data — the per-app report, app icons, and Apple's app picker — are blanked out completely. Nothing outside Rotshield is recorded.
+
+**Turning it off.** Settings → Share usage analytics. Events stop immediately, recordings no later than the next app start, and both stay off until you turn them back on.
+
+What I never send, analytics on or off: which apps you picked, app names or icons, how long you used anything, the numbers in the Screen Time report, rule names, or what you type into a check-in.
+
+### Subscriptions
+
+To know whether you have paid, the app uses RevenueCat. It receives from Apple and from the app:
+
+- your purchase history for Rotshield — which plan, when it started, renews or ends, refunds;
+- a random identifier the app generates for you, and the analytics identifier above, so that a renewal and the screens before it can be matched;
+- your country, price and currency, as reported by Apple.
+
+When you install Rotshield from an Apple Ads advert, iOS gives the app an anonymous attribution token that RevenueCat uses to tell which ad campaign led to the install. This works without asking to track you and does not use your advertising identifier (IDFA).
+
+Payment itself happens entirely inside Apple's App Store. I never see your card, your name, your email or your Apple ID.
+
+{/* TODO(Руслан): сроки хранения. PostHog — по тарифу проекта, RevenueCat — пока жив аккаунт клиента. Вписать конкретные цифры после настройки проектов. */}
 
 ## What stays on your device
 
@@ -30,7 +69,7 @@ Rotshield keeps its state in a private app group container on the phone (`group.
 
 - **Your rules** — name, type (schedule, all day, or daily limit), days of the week, times, limit length, on or off.
 - **Which apps a rule covers** — opaque tokens, not app names. See below.
-- **Settings** — your daily screen time goal, your answers to the onboarding questions, and a few flags that remember what you have already been asked or shown, including whether the app is unlocked.
+- **Settings** — your daily screen time goal, your answers to the onboarding questions, whether analytics are on, and a few flags that remember what you have already been asked or shown, including whether your subscription was active the last time the app checked.
 - **Focus timer** — the running session and when it ends, plus the durations you used recently.
 - **Access window** — while a 15-minute window is open: which rules it covers and when it closes.
 - **Check-ins** — if you take the "why open it?" challenge: the reason you picked, the note you typed, the mood number, and a timestamp. The last 200 are kept; older ones drop off.
@@ -46,9 +85,9 @@ You choose them in Apple's own picker, and iOS hands the app back opaque tokens 
 
 The per-app breakdown on the Today screen is drawn by a `DeviceActivityReport` extension — a small, separate, sandboxed process that Apple runs to display Screen Time data.
 
-Apple's sandbox does not let that extension write its results anywhere: not to a file, not to shared storage, not over the network. The numbers are computed, drawn on screen, and discarded. The main app never receives them, so neither do I, and neither does anyone else.
+Apple's sandbox does not let that extension write its results anywhere: not to a file, not to shared storage, not over the network. The numbers are computed, drawn on screen, and discarded. The main app never receives them, so neither do I, and neither does anyone else. That part of the screen is also blanked out of the screen recordings described above.
 
-The one number the app itself knows is a rough daily total. Rotshield asks iOS to tell it when your screen time passes 15 minutes, 30, 45, and so on, and remembers the highest threshold crossed today. That marker is stored on the device along with everything else.
+The one number the app itself knows is a rough daily total. Rotshield asks iOS to tell it when your screen time passes 15 minutes, 30, 45, and so on, and remembers the highest threshold crossed today. That marker is stored on the device and is never sent anywhere.
 
 ## Notifications
 
@@ -58,31 +97,43 @@ There are three: your 15-minute window has closed, your focus session is finishe
 
 ## Apple
 
-Rotshield is distributed through the App Store. When you download it, Apple collects what Apple collects for any download. That is between you and Apple, under Apple's privacy policy. What reaches me from it is an aggregate, anonymous download count — nothing that identifies you.
+Rotshield is distributed through the App Store. When you download it or subscribe, Apple collects what Apple collects for any download or purchase. That is between you and Apple, under Apple's privacy policy. What reaches me from it is aggregate download and sales figures, and the subscription details listed above — nothing that identifies you.
 
 Screen Time permission is granted to Apple's system frameworks, not to me. You can withdraw it at any time in iOS Settings, under Screen Time.
 
 ## Third parties
 
-None. No analytics, no crash reporting, no advertising, no attribution SDKs, no trackers. Rotshield does not track you across apps or websites, and version 1.0 has nothing to sell — there are no purchases and no subscription.
+- **PostHog** (PostHog Inc.) — usage analytics and screen recordings. Data is stored in PostHog's EU region (Frankfurt, Germany).
+- **RevenueCat** (RevenueCat, Inc., USA) — subscription status. Data is processed in the United States.
+{/* TODO(Руслан): механизм передачи в США — проверить в DPA RevenueCat (SCC или EU-US Data Privacy Framework) и вписать сюда. */}
+- **Apple** — payments, App Store, and the Apple Ads attribution token.
 
-The app contains two ordinary links: Apple's standard licence terms, and this page. Tapping one opens Safari, and from there the usual rules of the web apply.
+Both PostHog and RevenueCat process the data on my behalf under data processing agreements, and may not use it for their own purposes. There is no advertising SDK, no crash reporter, and no tracking across other apps or websites.
+
+The app also contains two ordinary links: Apple's standard licence terms, and this page. Tapping one opens Safari, and from there the usual rules of the web apply.
+
+## Legal basis
+
+- **Subscriptions** — performance of the contract you enter by subscribing (GDPR Art. 6(1)(b)): without it the app cannot know you have paid.
+- **Usage analytics** — my legitimate interest in finding out where the app fails people and improving it (Art. 6(1)(f)). You can object at any time by turning analytics off in Settings.
+{/* TODO(Руслан): юристу — хватает ли opt-out для аналитики по ePrivacy или нужен opt-in. От ответа зависит этот пункт и экран согласия в приложении. */}
 
 ## Your rights under the GDPR
 
 You have the right to access, correct, delete, restrict, object to, and port your personal data, and to complain to a supervisory authority.
 
-Here those rights are unusually easy to exercise, because I hold nothing:
+- **Data on your phone** — edit or delete it in the app; delete the app to erase everything at once.
+- **Analytics** — turn them off in Settings to stop collection. To have past events and recordings deleted, write to ruslan.d@scalemate.co.
+- **Subscription records** — write to the same address. Records Apple keeps about your purchases are handled by Apple.
 
-- **Access and portability** — there is nothing for me to send you. Your data is on your phone.
-- **Correction and deletion** — edit or delete it in the app; delete the app to erase everything at once.
-- **Objection and restriction** — there is no processing to object to or restrict.
-
-If you think that is wrong, write to ruslan.d@scalemate.co and I will answer.
+Because nothing I hold is tied to your name or email, I may ask you for a detail from the app that lets me find your records.
+{/* TODO(Руслан): показать analytics ID в настройках, чтобы на запрос было что прислать. */}
 
 ## Children
 
-Rotshield is a self-control tool: you limit your own device. It is not a parental control, and it is not directed at children. I hold no data about anyone, children included.
+Rotshield is a self-control tool: you limit your own device. It is not a parental control, and it is not directed at children.
+
+{/* TODO(Руслан): в онбординге есть вариант возраста «Under 16», и этот ответ уходит в аналитику. В Польше согласие на обработку данных до 16 лет даёт родитель (GDPR Art. 8). Решить: не отправлять ответ про возраст, выключать аналитику для «Under 16» или оставить и переписать этот раздел. */}
 
 ## Changes to this policy
 
