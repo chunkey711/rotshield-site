@@ -33,11 +33,12 @@ Under the GDPR that makes me the data controller. Under the EU Digital Services 
 
 When analytics are on, the app sends events like these to PostHog:
 
-- which screen you opened, and which onboarding step you reached;
+- which screen you opened, and which onboarding step you reached, including which question of the onboarding quiz;
 - your answers to the onboarding questions — the options you tapped, including your age range and roughly how many hours a day you think you spend on your phone. Never free text;
-- whether you granted Screen Time and notification permissions — yes or no;
-- that you created, paused, resumed or deleted a rule, its type, how many apps and categories it covers (a count, not which ones), and the limit length in minutes;
-- that you saw the subscription screen, picked a plan, started, finished, cancelled or failed a purchase, or tapped Restore;
+- whether you granted Screen Time and notification permissions, or skipped the notification step; if Screen Time permission fails, the error message iOS returned;
+- that you opened Apple's app picker and how many apps and categories you chose — a count, not which ones — or that you skipped creating a rule;
+- that you created, paused, resumed or deleted a rule, or that creating it failed; its type, how many apps and categories it covers, and the limit length in minutes;
+- that you saw the subscription screen, whether prices loaded, which plan you picked, whether a purchase started, finished, was cancelled or failed (with the error code), and whether you tapped Restore;
 - the steps of the "unlock" challenge, and whether it ended with an access window or you gave up.
 
 Each event carries a random identifier generated on your phone, your device model, iOS version, app version and language. PostHog sees your IP address when the event arrives.
