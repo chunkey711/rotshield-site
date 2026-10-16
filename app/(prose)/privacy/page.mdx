@@ -41,8 +41,7 @@ When analytics are on, the app sends events like these to PostHog:
 - that you saw the subscription screen, whether prices loaded, which plan you picked, whether a purchase started, finished, was cancelled or failed (with the error code), and whether you tapped Restore;
 - the steps of the "unlock" challenge, and whether it ended with an access window or you gave up.
 
-Each event carries a random identifier generated on your phone, your device model, iOS version, app version and language. PostHog sees your IP address when the event arrives.
-{/* TODO(Руслан): включить в PostHog «Discard client IP data» — тогда эту фразу заменить на «…and discards it» */}
+Each event carries a random identifier generated on your phone, your device model, iOS version, app version and language. PostHog sees your IP address when the event arrives and discards it — it is not stored with the event.
 
 **Screen recordings.** When analytics are on, the app also records what its own screens look like, so I can see where people get confused. Every piece of text and every image is masked before the recording leaves the phone, and the screens that show Screen Time data — the per-app report, app icons, and Apple's app picker — are blanked out completely. Nothing outside Rotshield is recorded.
 
