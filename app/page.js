@@ -61,9 +61,8 @@ function ShieldMock() {
     <div className={styles.shield} aria-hidden="true">
       <Mascot state="bright" size={64} className={styles.shieldMascot} />
       <p className={styles.shieldTitle}>Blocked</p>
-      <p className={styles.shieldSubtitle}>Instagram is blocked right now</p>
+      <p className={styles.shieldSubtitle}>Instagram is blocked — open Rotshield to unlock</p>
       <span className={`${styles.shieldButton} ${styles.shieldPrimary}`}>Stay focused</span>
-      <span className={styles.shieldButton}>Unlock</span>
     </div>
   );
 }
@@ -141,11 +140,12 @@ export default function HomePage() {
       <section className={`${styles.section} ${styles.privacy}`}>
         <div className={styles.privacyInner}>
           <p className="overline">privacy</p>
-          <h2 className={styles.sectionTitle}>Nothing leaves your phone.</h2>
+          <h2 className={styles.sectionTitle}>Your screen time stays on your phone.</h2>
           <p className={styles.sectionLede}>
-            No account, no server, no analytics. That is not a statement of intent — it is a
-            description of the build. Screen time is computed by iOS inside a sandboxed extension
-            and never sent anywhere. Delete the app, and everything goes with it.
+            No account, no server of our own. Screen time is computed by iOS inside a sandboxed
+            extension and never sent anywhere — not the apps you block, not the minutes. The app
+            sends anonymous usage analytics and checks your subscription. Delete the app, and
+            everything on the phone goes with it.
           </p>
           <Link href="/privacy/" className={styles.textLink}>
             Read the privacy policy
