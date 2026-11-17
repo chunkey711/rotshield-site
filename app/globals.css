@@ -156,69 +156,6 @@ a {
   padding: 2rem 1.25rem 3rem;
 }
 
-/* Контейнер 60rem как у секций главной: текст 36rem (длина строки как у
-   .sectionLede), справа навигация по документам. На узких экранах одна
-   колонка — ссылки на документы и так есть в футере. */
-.prose-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 36rem);
-}
-
-.prose-aside {
-  display: none;
-}
-
-@media (min-width: 900px) {
-  .prose-grid {
-    grid-template-columns: minmax(0, 36rem) minmax(0, 1fr);
-    column-gap: 4rem;
-  }
-
-  .prose-aside {
-    display: block;
-  }
-}
-
-.doc-nav {
-  position: sticky;
-  top: 2rem;
-  padding-left: 1.5rem;
-  border-left: 1px solid var(--divider);
-}
-
-.doc-nav .overline {
-  margin: 0 0 0.9rem;
-}
-
-.doc-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 0.55rem;
-}
-
-.doc-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.doc-nav a:hover {
-  color: var(--text);
-}
-
-.doc-nav a[aria-current='page'] {
-  color: var(--text);
-  font-weight: 600;
-}
-
-.doc-nav a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
-
 .prose-header {
   margin-bottom: 3rem;
 }
