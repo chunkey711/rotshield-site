@@ -1,11 +1,11 @@
 export const metadata = {
   title: 'Privacy Policy',
-  description: 'Your Screen Time data never leaves your iPhone. What Rotshield does send — usage analytics and subscription status — and why.',
+  description: 'Your Screen Time data never leaves your iPhone. What Rotshield does send — usage analytics and subscription status — what Paddle receives when you buy on the website, and why.',
 };
 
 # Privacy Policy
 
-<p className="effective">Effective October 29, 2026</p>
+<p className="effective">Effective November 17, 2026</p>
 
 ## The short version
 
@@ -14,9 +14,9 @@ Your Screen Time data never leaves your iPhone: not which apps you block, not ho
 Two things do leave the phone, starting with version 1.1:
 
 - **Usage analytics** — which screens you open and which steps you take in the app, plus masked screen recordings of the app itself, sent to PostHog in the EU. They tell me where people get stuck.
-- **Subscription status** — whether you have an active subscription, handled by RevenueCat so the app can unlock and keep working after a renewal. Apple takes the payment; I never see your card or your Apple ID.
+- **Subscription status** — whether you have an active subscription, handled by RevenueCat so the app can unlock and keep working after a renewal. When you subscribe in the app, Apple takes the payment; when you subscribe on this website, Paddle does, as the seller and Merchant of Record. I never see your card or your Apple ID.
 
-Neither is linked to your name, email or Apple ID, and neither is used for advertising or to track you across other apps.
+Neither is linked to your name, email or Apple ID, and neither is used for advertising or to track you across other apps. The one exception is a purchase on this website: Paddle needs your email address for the order, so a subscription bought there is tied to it — see [Purchases on this website](#purchases-on-this-website).
 
 ## Who is responsible
 
@@ -47,7 +47,7 @@ What I never send, ever: which apps you picked, app names or icons, how long you
 
 ### Subscriptions
 
-To know whether you have paid, the app uses RevenueCat. It receives from Apple and from the app:
+To know whether you have paid, the app uses RevenueCat. It receives from Apple and from the app — and from Paddle, if you bought on this website:
 
 - your purchase history for Rotshield — which plan, when it started, renews or ends, refunds;
 - a random identifier the app generates for you, and the analytics identifier above, so that a renewal and the screens before it can be matched;
@@ -55,11 +55,23 @@ To know whether you have paid, the app uses RevenueCat. It receives from Apple a
 
 When you install Rotshield from an Apple Ads advert, iOS gives the app an anonymous attribution token that RevenueCat uses to tell which ad campaign led to the install. This works without asking to track you and does not use your advertising identifier (IDFA).
 
-Payment itself happens entirely inside Apple's App Store. I never see your card, your name, your email or your Apple ID.
+When you subscribe in the app, payment itself happens entirely inside Apple's App Store. I never see your card, your name, your email or your Apple ID.
+
+<h3 id="purchases-on-this-website">Purchases on this website</h3>
+
+If you buy Rotshield Pro on www.rotshield.app, the order is processed by **Paddle** (Paddle.com Market Limited and its affiliates), our online reseller and the Merchant of Record: Paddle is the seller, charges your payment method, calculates and collects tax, and issues receipts and refunds.
+
+Paddle collects what it needs for that at checkout — your email address, your country and, where tax rules require it, your postal code or address, your payment details, and technical data such as your IP address for fraud prevention and tax location. Paddle processes this data under its own [privacy notice](https://www.paddle.com/legal/privacy).
+
+What reaches me from Paddle: your email address, your country, which plan you bought, the amount and tax charged, and the dates and status of payments, renewals, cancellations and refunds. I never see your full card number or other payment credentials.
+
+I use this only to provide your subscription — to connect it to the app through the activation link, and to answer you about your order, refunds or problems with Rotshield. I do not send marketing email. Paddle passes the subscription status to RevenueCat, so the app can tell that you have paid, as described above.
+
+The checkout on this website is provided by Paddle and runs Paddle's own scripts, which may use cookies needed for payment and fraud prevention. Those are covered by Paddle's privacy notice.
 
 ### How long it is kept
 
-PostHog keeps analytics events for up to one year and screen recordings for up to 30 days, then deletes them. RevenueCat keeps subscription records for as long as Rotshield uses its service, and deletes them on request or within 30 days after the service ends.
+PostHog keeps analytics events for up to one year and screen recordings for up to 30 days, then deletes them. RevenueCat keeps subscription records for as long as Rotshield uses its service, and deletes them on request or within 30 days after the service ends. Paddle keeps order records for as long as tax and accounting law requires it to, as described in its privacy notice.
 
 ## What stays on your device
 
@@ -104,14 +116,15 @@ Screen Time permission is granted to Apple's system frameworks, not to me. You c
 - **PostHog** (PostHog Inc.) — usage analytics and screen recordings. Data is stored in PostHog's EU region (Frankfurt, Germany).
 - **RevenueCat** (RevenueCat, Inc., USA) — subscription status. Data is processed in the United States; the transfer is covered by the EU Standard Contractual Clauses, with the UK Addendum for the UK.
 - **Apple** — payments, App Store, and the Apple Ads attribution token.
+- **Paddle** (Paddle.com Market Limited, UK, and its affiliates) — payments for purchases on this website, as the seller and Merchant of Record. Paddle acts under its own [privacy notice](https://www.paddle.com/legal/privacy).
 
-Both PostHog and RevenueCat process the data on my behalf under data processing agreements, and may not use it for their own purposes. There is no advertising SDK, no crash reporter, and no tracking across other apps or websites.
+Both PostHog and RevenueCat process the data on my behalf under data processing agreements, and may not use it for their own purposes. Apple and Paddle, as the sellers of the subscriptions bought through them, process payment data under their own privacy policies. There is no advertising SDK, no crash reporter, and no tracking across other apps or websites.
 
 The app also contains a few ordinary links: Apple's standard licence terms, this page, Apple's subscription settings, and an email link to me. Tapping one opens Safari, the App Store or your mail app, and from there their own rules apply.
 
 ## Legal basis
 
-- **Subscriptions** — performance of the contract you enter by subscribing (GDPR Art. 6(1)(b)): without it the app cannot know you have paid.
+- **Subscriptions** — performance of the contract you enter by subscribing (GDPR Art. 6(1)(b)): without it the app cannot know you have paid. The same applies to the order details I receive from Paddle when you buy on this website.
 - **Usage analytics** — my legitimate interest in finding out where the app fails people and improving it (Art. 6(1)(f)). You can object at any time by writing to ruslan.d@scalemate.co.
 
 ## Your rights under the GDPR
@@ -121,6 +134,7 @@ You have the right to access, correct, delete, restrict, object to, and port you
 - **Data on your phone** — edit or delete it in the app; delete the app to erase everything at once.
 - **Analytics** — write to ruslan.d@scalemate.co to object or to have past events and recordings deleted.
 - **Subscription records** — write to the same address. Records Apple keeps about your purchases are handled by Apple.
+- **Website purchases** — write to the same address about the order details I receive. Records Paddle keeps as the seller are handled by Paddle, under its privacy notice.
 
 ## Children
 
