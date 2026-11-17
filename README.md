@@ -1,6 +1,6 @@
 # rotshield-site
 
-Сайт Rotshield: главная, privacy policy, support. Next.js 15 (App Router), деплой на Vercel, домен www.rotshield.app.
+Сайт Rotshield: главная, pricing, terms, refund policy, privacy policy, support. Next.js 15 (App Router), деплой на Vercel, домен www.rotshield.app.
 
 ```bash
 npm install
@@ -11,7 +11,7 @@ npm run build
 ## Где что
 
 - `app/page.js` + `app/home.module.css` — главная
-- `app/(prose)/privacy/page.mdx`, `app/(prose)/support/page.mdx` — текстовые страницы, markdown как есть
+- `app/(prose)/<slug>/page.mdx` — текстовые страницы, markdown как есть: `pricing`, `terms`, `refund`, `privacy`, `support`. Pricing, Terms, Refund и Privacy — под проверку домена в Paddle: должны быть в футере и открываться без логина
 - `app/globals.css` — палитра из приложения (`theme/primitives.js`), базовая типографика, стили прозы
 - `components/Mascot.js` — маскот через CSS-маску, красится от темы; арт в `public/mascot/`
 - `components/Cosmos.js` — космос главного экрана приложения, только в тёмной схеме

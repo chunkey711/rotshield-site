@@ -153,6 +153,19 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section id="pricing" className={styles.section}>
+        <p className="overline">pricing</p>
+        <h2 className={styles.sectionTitle}>Rotshield Pro unlocks the whole app.</h2>
+        <p className={styles.sectionLede}>
+          $69.99 a year with a 7-day free trial, or $6.99 a week. Both plans include every rule,
+          the focus timer and the way back in. They renew automatically, and you can cancel any
+          time.
+        </p>
+        <Link href="/pricing/" className={styles.textLink}>
+          See plans and pricing
+        </Link>
+      </section>
+
       <section className={styles.section}>
         <div className={styles.honest}>
           <h2 className={styles.sectionTitle}>Friction, not a lock.</h2>
