@@ -157,7 +157,7 @@ export default function HomePage() {
         <p className="overline">pricing</p>
         <h2 className={styles.sectionTitle}>Rotshield Pro unlocks the whole app.</h2>
         <p className={styles.sectionLede}>
-          $69.99 a year with a 7-day free trial, or $6.99 a week. Both plans include every rule,
+          $69.99 a year or $6.99 a week. Both plans include every rule,
           the focus timer and the way back in. They renew automatically, and you can cancel any
           time.
         </p>
