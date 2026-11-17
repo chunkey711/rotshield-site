@@ -151,9 +151,14 @@ a {
 /* ---------- Текстовые страницы: privacy, support ---------- */
 
 .prose-page {
-  max-width: 36rem;
+  max-width: 60rem;
   margin: 0 auto;
   padding: 2rem 1.25rem 0;
+}
+
+/* Колонка текста уже контейнера: длина строки как у .sectionLede на главной */
+.prose {
+  max-width: 36rem;
 }
 
 .prose-header {
